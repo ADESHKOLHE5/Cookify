@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+  <!-- js server axion -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+<nav class="navbar navbar-expand-lg custom-navbar container-fluid px-5 py-3">
+  <a class="navbar-brand text-dark" href="#">Cookify</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+          data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav gap-3">
+      <li class="nav-item">
+        <a class="nav-link " href="#Home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Menu">Menu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Feedback</a>
+      </li>
+    </ul>
+  </div>
+
+  <div  class="d-flex gap-3">
+    <input type="text" class="search-box" placeholder="Search">
+    <button class="book-btn" href="Recipieadd.html">Add a Recipie</button>
+  </div>
+</nav>
+</header>
+<main>
+<section class="hero-section d-flex align-items-center">
+    <div class="container">
+        <div class="row" id="Home">
+            <div class="col-lg-6 text-white">
+                <h1 class="display-4 fw-bold">
+                    Experience the real taste of <span class="text-warning">Best Dishes</span>
+                </h1>
+                <p class="lead mt-3">
+                    Experience the real taste of dishes
+                </p>
+
+                <div class="mt-4">
+                    <a href="Recipieadd.html" class="btn btn-light me-3">Add a Recipies</a>
+                    <a href="#" class="btn btn-outline-light">View Rcipies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- section for to image and article -->
+ <div id="Menu"></div>
+<div id="dynamic-section"></div>
+
+
+
+
+
+
+</main>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
