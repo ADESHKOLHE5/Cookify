@@ -51,12 +51,20 @@
           </div>
 
           <div class="col-md-6">
-            <label class="form-label">Image Path</label>
-            <input type="text" id="image" placeholder="images/misalpav.jpeg" class="form-control" required>
+            <label class="form-label">Select Image</label>
+            <select id="image" class="form-control" required>
+              <option value="">-- Choose an image --</option>
+              <option value="images/imgSec.jpeg">imgSec</option>
+              <option value="images/MisalPav.jpeg">MisalPav</option>
+              <option value="images/MisalPav1.jpeg">MisalPav1</option>
+              <option value="images/Puranpoli.jpeg">Puranpoli</option>
+              <option value="images/upma.jpeg">Upma</option>
+              <option value="images/vadapav.jpeg">Vada Pav</option>
+            </select>
           </div>
 
           <div class="col-12">
-            <button type="button" class="btn btn-success w-100 py-2 mt-2" onclick="saveRecipe()">Save Recipe</button>
+            <button type="button" class="btn btn-success w-100 py-2 mt-2" id="SavaRecipeBtn">Save Recipe</button>
           </div>
 
         </div>
@@ -72,6 +80,7 @@
 
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="js/script.js"></script>
 
 </body>

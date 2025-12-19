@@ -1,116 +1,126 @@
 {
-"recipieData" : 
-[
-  {
-    "id": 1,
-    "title": "Puran Poli",
-    "ingredients": [
-      "2 cups chana dal",
-      "2 cups jaggery (grated)",
-      "2 cups wheat flour",
-      "1 tsp cardamom powder",
-      "2 tbsp ghee",
-      "Water as needed",
-      "Salt to taste"
-    ],
-    "process": [
-      "Boil chana dal until soft and drain excess water.",
-      "Cook dal with jaggery until it forms a thick mixture.",
-      "Add cardamom powder and mix well. Let it cool.",
-      "Prepare dough by mixing wheat flour, salt, water, and a little oil.",
-      "Make small dough balls and stuff them with the dal–jaggery mixture.",
-      "Roll gently and cook on a hot tawa using ghee until golden brown."
-    ],
-    "description2": "A traditional sweet flatbread enjoyed especially during festive seasons.",
-    "image": "images/Puranpoli.jpeg"
-  },
-  {
-    "id": 2,
-    "title": "Upma",
-    "ingredients": [
-      "1 cup semolina (rava/sooji)",
-      "2 tbsp oil or ghee",
-      "1 tsp mustard seeds",
-      "1 tsp cumin seeds",
-      "8–10 curry leaves",
-      "1 chopped onion",
-      "2 chopped green chillies",
-      "1.5 cups hot water",
-      "Salt to taste",
-      "Fresh coriander for garnish"
-    ],
-    "process": [
-      "Dry roast semolina on low flame until aromatic and slightly golden.",
-      "Heat oil, add mustard seeds, cumin, curry leaves, and allow to splutter.",
-      "Add chopped onions and green chillies; sauté until onions turn soft.",
-      "Add roasted semolina and mix well.",
-      "Pour hot water slowly while continuously stirring.",
-      "Cook until upma thickens and turns soft.",
-      "Garnish with coriander and serve hot."
-    ],
-    "description2": "A light, healthy, and quick South Indian breakfast made with semolina.",
-    "image": "images/upma.jpeg"
-  },
-  {
-    "id": 3,
-    "title": "Vada Pav",
-    "ingredients": [
-      "4 pav buns",
-      "2 boiled potatoes",
-      "1 tsp mustard seeds",
-      "1 tsp turmeric powder",
-      "1 tbsp ginger-garlic-chilli paste",
-      "Salt to taste",
-      "Besan (gram flour) for batter",
-      "Oil for frying",
-      "Dry garlic chutney"
-    ],
-    "process": [
-      "Mash boiled potatoes and mix with mustard seeds, turmeric, and spices.",
-      "Heat oil and sauté ginger-garlic-chilli paste, then add the potato mixture.",
-      "Shape into small balls.",
-      "Prepare a thick batter using besan, salt, and water.",
-      "Dip potato balls into batter and deep-fry until golden.",
-      "Slice pav buns, apply garlic chutney, and place the fried vada inside.",
-      "Press gently and serve hot with fried chillies."
-    ],
-    "description2": "Mumbai’s iconic street food – spicy potato vada stuffed between pav.",
-    "image": "images/vadapav.jpeg"
-  },
-  {
-  "id": 4,
-  "title": "Misal Pav",
-  "ingredients": [
-    "2 cups sprouted matki (moth beans)",
-    "1 chopped onion",
-    "1 chopped tomato",
-    "1/2 cup farsan (sev/chiwda mix)",
-    "2 tbsp oil",
-    "1 tsp mustard seeds",
-    "1 tsp cumin seeds",
-    "1 tbsp ginger-garlic paste",
-    "1.5 tbsp red misal masala or red chilli powder",
-    "1/2 tsp turmeric powder",
-    "Salt to taste",
-    "4 pav buns",
-    "Fresh coriander for garnish",
-    "Lemon wedges"
+  "recipieData": [
+    {
+      "id": 1,
+      "title": "Puran Poli",
+      "ingredients": [
+        "2 cups chana dal",
+        "2 cups jaggery (grated)",
+        "2 cups wheat flour",
+        "1 tsp cardamom powder",
+        "2 tbsp ghee",
+        "Water as needed",
+        "Salt to taste"
+      ],
+      "process": [
+        "Boil chana dal until soft and drain excess water.",
+        "Cook dal with jaggery until it forms a thick mixture.",
+        "Add cardamom powder and mix well. Let it cool.",
+        "Prepare dough by mixing wheat flour, salt, water, and a little oil.",
+        "Make small dough balls and stuff them with the dal–jaggery mixture.",
+        "Roll gently and cook on a hot tawa using ghee until golden brown."
+      ],
+      "description2": "A traditional sweet flatbread enjoyed especially during festive seasons.",
+      "image": "images/Puranpoli.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Upma",
+      "ingredients": [
+        "1 cup semolina (rava/sooji)",
+        "2 tbsp oil or ghee",
+        "1 tsp mustard seeds",
+        "1 tsp cumin seeds",
+        "8–10 curry leaves",
+        "1 chopped onion",
+        "2 chopped green chillies",
+        "1.5 cups hot water",
+        "Salt to taste",
+        "Fresh coriander for garnish"
+      ],
+      "process": [
+        "Dry roast semolina on low flame until aromatic and slightly golden.",
+        "Heat oil, add mustard seeds, cumin, curry leaves, and allow to splutter.",
+        "Add chopped onions and green chillies; sauté until onions turn soft.",
+        "Add roasted semolina and mix well.",
+        "Pour hot water slowly while continuously stirring.",
+        "Cook until upma thickens and turns soft.",
+        "Garnish with coriander and serve hot."
+      ],
+      "description2": "A light, healthy, and quick South Indian breakfast made with semolina.",
+      "image": "images/upma.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Vada Pav",
+      "ingredients": [
+        "4 pav buns",
+        "2 boiled potatoes",
+        "1 tsp mustard seeds",
+        "1 tsp turmeric powder",
+        "1 tbsp ginger-garlic-chilli paste",
+        "Salt to taste",
+        "Besan (gram flour) for batter",
+        "Oil for frying",
+        "Dry garlic chutney"
+      ],
+      "process": [
+        "Mash boiled potatoes and mix with mustard seeds, turmeric, and spices.",
+        "Heat oil and sauté ginger-garlic-chilli paste, then add the potato mixture.",
+        "Shape into small balls.",
+        "Prepare a thick batter using besan, salt, and water.",
+        "Dip potato balls into batter and deep-fry until golden.",
+        "Slice pav buns, apply garlic chutney, and place the fried vada inside.",
+        "Press gently and serve hot with fried chillies."
+      ],
+      "description2": "Mumbai’s iconic street food – spicy potato vada stuffed between pav.",
+      "image": "images/vadapav.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Misal Pav",
+      "ingredients": [
+        "2 cups sprouted matki (moth beans)",
+        "1 chopped onion",
+        "1 chopped tomato",
+        "1/2 cup farsan (sev/chiwda mix)",
+        "2 tbsp oil",
+        "1 tsp mustard seeds",
+        "1 tsp cumin seeds",
+        "1 tbsp ginger-garlic paste",
+        "1.5 tbsp red misal masala or red chilli powder",
+        "1/2 tsp turmeric powder",
+        "Salt to taste",
+        "4 pav buns",
+        "Fresh coriander for garnish",
+        "Lemon wedges"
+      ],
+      "process": [
+        "Heat oil and add mustard seeds and cumin until they splutter.",
+        "Add chopped onions and sauté until golden.",
+        "Add ginger-garlic paste, tomatoes, turmeric, and misal masala. Cook well.",
+        "Add sprouted matki and mix thoroughly.",
+        "Pour water and simmer until beans become soft and the tari (spicy gravy) forms.",
+        "Serve matki with farsan on top, garnish with onion, coriander, and lemon.",
+        "Toast pav lightly with butter. Enjoy with hot pav."
+      ],
+      "description2": "A spicy Maharashtrian curry made with sprouted beans, topped with farsan and served with pav.",
+      "buttonText": "Explore Menu",
+      "image": "images/MisalPav1.jpeg"
+    }
   ],
-  "process": [
-    "Heat oil and add mustard seeds and cumin until they splutter.",
-    "Add chopped onions and sauté until golden.",
-    "Add ginger-garlic paste, tomatoes, turmeric, and misal masala. Cook well.",
-    "Add sprouted matki and mix thoroughly.",
-    "Pour water and simmer until beans become soft and the tari (spicy gravy) forms.",
-    "Serve matki with farsan on top, garnish with onion, coriander, and lemon.",
-    "Toast pav lightly with butter. Enjoy with hot pav."
-    
-  ],
-  "description2": "A spicy Maharashtrian curry made with sprouted beans, topped with farsan and served with pav.",
-  "buttonText": "Explore Menu",
-  "image": "images/MisalPav1.jpeg"
+  "CustomerReview": [
+    {
+      "name": "Anjali Sharma",
+      "review": "Cookify has transformed my cooking experience! The recipes are easy to follow and absolutely delicious. Highly recommend it to all food lovers!"
+    },
+    {
+      "name": "Rohit Verma",
+      "review": "I love the variety of recipes available on Cookify. From traditional dishes to modern cuisine, there's something for everyone. The step-by-step instructions make cooking a breeze."
+    },
+    {
+      "name": "Sneha Kapoor",
+      "review": "Cookify is my go-to website for all things culinary. The community is fantastic, and I always find new inspiration for my meals. The recipe collection is extensive and diverse."
+    }
+  ]
 }
-
-]
-}
-

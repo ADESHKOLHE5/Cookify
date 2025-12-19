@@ -1,4 +1,4 @@
-let url = "http://localhost:3000/recipieData";
+const url = "http://localhost:3000/recipieData";
 
 async function loadSections() {
     try {
@@ -97,52 +97,87 @@ loadSections();
 
 // to load the data in json through a form
 
-async function saveRecipe() {
-    // Read form values
-    const title = document.getElementById("title").value;
-    const description2 = document.getElementById("description2").value;
-    const ingredientsText = document.getElementById("ingredients").value;
-    const processText = document.getElementById("process").value;
-    const buttonText = document.getElementById("buttonText").value;
-    const image = document.getElementById("image").value;
+async function saveRecipe(e) {
+    if (e && e.preventDefault) e.preventDefault();
 
-    // Convert textarea lines into array
-    const ingredientsArray = ingredientsText.split("\n").map(i => i.trim()).filter(i => i !== "");
-    const processArray = processText.split("\n").map(s => s.trim()).filter(s => s !== "");
+    const msgBox = document.getElementById("messageBox");
+    const getVal = id => document.getElementById(id) ? document.getElementById(id).value.trim() : "";
+    const title = getVal("title");
+    const description2 = getVal("description2");
+    const ingredientsText = getVal("ingredients");
+    const processText = getVal("process");
+    const buttonText = getVal("buttonText");
+    const image = getVal("image");
 
-    // Create JSON object to save
+    // Validation
+    const missing = [];
+    if (!title) missing.push('Title');
+    if (!ingredientsText) missing.push('Ingredients');
+    if (!processText) missing.push('Process');
+    if (!image) missing.push('Image');
+
+    if (missing.length) {
+        if (msgBox) msgBox.innerHTML = `<div class="alert alert-danger">Please provide: ${missing.join(', ')}</div>`;
+        return;
+    }
+
     const recipe = {
-        title: title,
-        description2: description2,
-        ingredients: ingredientsArray,
-        process: processArray,
-        buttonText: buttonText,
-        image: image
+        title,
+        description2,
+        ingredients: ingredientsText.split("\n").map(i => i.trim()).filter(Boolean),
+        process: processText.split("\n").map(p => p.trim()).filter(Boolean),
+        buttonText: buttonText || 'Explore Menu',
+        image
     };
 
-    try {
-        // Send to JSON server
-        const response = await axios.post(url, recipe);
-
-        // Show success message
-        document.getElementById("messageBox").innerHTML =
-            `<div class="alert alert-success mt-3">Recipe saved successfully!</div>`;
-
-        // Show generated JSON
-        document.getElementById("output").innerHTML =
-            `<pre>${JSON.stringify(recipe, null, 2)}</pre>`;
-
-        // Clear form
-        document.getElementById("recipeForm").reset();
-
-
-    } catch (error) {
-        console.error("Error saving data:", error);
-
-        document.getElementById("messageBox").innerHTML =
-            `<div class="alert alert-danger mt-3">Failed to save recipe!</div>`;
+    const saveBtn = document.getElementById("SavaRecipeBtn");
+    const prevBtnText = saveBtn ? saveBtn.innerHTML : null;
+    if (saveBtn) {
+        saveBtn.disabled = true;
+        saveBtn.innerHTML = 'Saving...';
     }
-    finally{loadSections()}
- }
- saveRecipe();
+
+    try {
+        const response = await axios.post(url, recipe);
+        if (msgBox) msgBox.innerHTML = `<div class="alert alert-success">Recipe saved (id: ${response.data && response.data.id ? response.data.id : 'n/a'})</div>`;
+
+        const out = document.getElementById("output");
+        if (out) out.innerHTML = `<pre>${JSON.stringify(response.data || recipe, null, 2)}</pre>`;
+
+        const form = document.getElementById("recipeForm");
+        if (form) form.reset();
+
+        await loadSections();
+    } catch (error) {
+        console.error(error);
+        if (msgBox) msgBox.innerHTML = `<div class="alert alert-danger">Save failed: ${error && error.message ? error.message : 'unknown error'}</div>`;
+    } finally {
+        if (saveBtn) {
+            saveBtn.disabled = false;
+            if (prevBtnText !== null) saveBtn.innerHTML = prevBtnText;
+        }
+    }
+}
+
+ 
+ const saveBtn = document.getElementById("SavaRecipeBtn");
+ if (saveBtn) saveBtn.addEventListener("click", saveRecipe);
+
+  function changeImage(value) {
+    const img = document.getElementById("foodImage");
+
+    if (value === "puranpoli") {
+      img.src = "images/Puranpoli.jpeg";
+    } 
+    else if (value === "upma") {
+      img.src = "images/upma.jpeg";
+    } 
+    else if (value === "vadapav") {
+      img.src = "images/vadapav.jpeg";
+    } 
+    else {
+      img.src = "images/food.jpg";
+    }
+  }
+ 
 
