@@ -111,16 +111,25 @@
   ],
   "CustomerReview": [
     {
-      "name": "Anjali Sharma",
-      "review": "Cookify has transformed my cooking experience! The recipes are easy to follow and absolutely delicious. Highly recommend it to all food lovers!"
+      "id": 1,
+      "customerName": "Wade Warren",
+      "dishName": "Puran Poli",
+      "description": "Very tasty and authentic Maharashtrian flavor.",
+      "image": "images1/user1.jpg"
     },
     {
-      "name": "Rohit Verma",
-      "review": "I love the variety of recipes available on Cookify. From traditional dishes to modern cuisine, there's something for everyone. The step-by-step instructions make cooking a breeze."
+      "id": 2,
+      "customerName": "Jenny Wilson",
+      "dishName": "Vada Pav",
+      "description": "Crispy vada and soft pav. Loved it!",
+      "image": "images1/user2.jpg"
     },
     {
-      "name": "Sneha Kapoor",
-      "review": "Cookify is my go-to website for all things culinary. The community is fantastic, and I always find new inspiration for my meals. The recipe collection is extensive and diverse."
+      "id": 3,
+      "customerName": "Esther Howard",
+      "dishName": "Misal Pav",
+      "description": "Perfect blend of spices and textures. A must-try!",
+      "image": "images1/user3.jpg"
     }
   ]
 }

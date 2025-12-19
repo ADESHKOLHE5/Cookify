@@ -179,5 +179,47 @@ async function saveRecipe(e) {
       img.src = "images/food.jpg";
     }
   }
+
+
+
+
+const reviewUrl = "http://localhost:3000/CustomerReview";
+
+async function loadReviews() {
+  try {
+    const response = await axios.get(reviewUrl);
+    const reviews = response.data;
+
+    let cardsHtml = "";
+
+    reviews.forEach(review => {
+      cardsHtml += `
+        <div class="col-md-4">
+          <div class="review-card h-100">
+            <p class="dish-name">${review.dishName}</p>
+            <p class="description">${review.description}</p>
+
+            <div class="d-flex align-items-center mt-3">
+              <img src="${review.image}" class="avatar">
+              <div class="ms-2">
+                <h6 class="mb-0">${review.customerName}</h6>
+                <small class="text-muted">Customer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    document.getElementById("reviewContainer").innerHTML = cardsHtml;
+
+  } catch (error) {
+    console.error("Error loading reviews", error);
+  }
+}
+
+loadReviews();
+
+ 
  
 
