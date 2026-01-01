@@ -86,30 +86,30 @@
 
     <!-- Form -->
     <div class="col-lg-6">
-      <form class="contact-form">
+      <form class="contact-form" id="feedbackForm">
 
         <div class="row g-3">
 
           <div class="col-md-12">
-            <input type="text" class="form-control" placeholder="Customer name">
+            <input type="text" class="form-control" id="feedbackCustomerName" placeholder="Customer name">
           </div>
 
           <div class="col-md-6">
-            <input type="date" class="form-control">
+            <input type="date" class="form-control" id="feedbackDate">
           </div>
 
           <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Phone number">
+            <input type="text" class="form-control" id="feedbackPhone" placeholder="Phone number">
           </div>
 
           <div class="col-12">
-            <textarea class="form-control" rows="4" placeholder="Type your message"></textarea>
+            <textarea class="form-control" id="feedbackMessage" rows="4" placeholder="Type your message"></textarea>
           </div>
 
           <!-- SELECT -->
           <div class="col-12">
-            <select class="form-select" onchange="changeImage(this.value)">
-              <option value="vadapav">Select Dish</option>
+            <select class="form-select" id="feedbackDish" onchange="changeImage(this.value)">
+              <option value="">Select Dish</option>
               <option value="puranpoli">Puran Poli</option>
               <option value="upma">Upma</option>
               <option value="vadapav">Vada Pav</option>
@@ -117,7 +117,7 @@
           </div>
 
           <div class="col-12">
-            <button type="button" class="btn btn-dark px-4">Submit</button>
+            <button type="button" class="btn btn-dark px-4" id="submitFeedbackBtn">Submit</button>
           </div>
 
         </div>

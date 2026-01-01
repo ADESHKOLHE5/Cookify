@@ -108,7 +108,6 @@
       "buttonText": "Explore Menu",
       "image": "images/MisalPav1.jpeg"
     }
-    
   ],
   "CustomerReview": [
     {
@@ -131,6 +130,15 @@
       "dishName": "Misal Pav",
       "description": "Perfect blend of spices and textures. A must-try!",
       "image": "images1/user3.jpg"
+    },
+    {
+      "id": "a8ad",
+      "customerName": "ganesh kale",
+      "dishName": "Vada Pav",
+      "description": "most delicious",
+      "phone": "9665680995",
+      "date": "2026-01-01",
+      "image": "images/vadapav.jpeg"
     }
   ]
 }

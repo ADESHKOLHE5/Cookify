@@ -248,6 +248,89 @@ async function loadReviews() {
 
 loadReviews();
 
+// Initialize default feedback image
+document.addEventListener('DOMContentLoaded', function() {
+    const foodImage = document.getElementById("foodImage");
+    if (foodImage) {
+        foodImage.src = "images/vadapav.jpeg";
+    }
+});
+
+// Feedback form submission
+async function submitFeedback(e) {
+    if (e && e.preventDefault) e.preventDefault();
+
+    const customerName = document.getElementById("feedbackCustomerName").value.trim();
+    const phone = document.getElementById("feedbackPhone").value.trim();
+    const date = document.getElementById("feedbackDate").value;
+    const message = document.getElementById("feedbackMessage").value.trim();
+    const dishSelect = document.getElementById("feedbackDish").value.trim();
+
+    // Validation
+    if (!customerName || !message || !dishSelect) {
+        alert("Please fill in: Customer Name, Message, and select a Dish");
+        return;
+    }
+
+    // Map dish select to dish name
+    const dishNameMap = {
+        "puranpoli": "Puran Poli",
+        "upma": "Upma",
+        "vadapav": "Vada Pav"
+    };
+    
+    const dishName = dishNameMap[dishSelect] || dishSelect;
+    
+    // Map dish to image
+    const dishImageMap = {
+        "puranpoli": "images/Puranpoli.jpeg",
+        "upma": "images/upma.jpeg",
+        "vadapav": "images/vadapav.jpeg"
+    };
+    
+    const image = dishImageMap[dishSelect] || "images/food.jpg";
+
+    const review = {
+        customerName,
+        dishName,
+        description: message,
+        phone,
+        date,
+        image
+    };
+
+    const submitBtn = document.getElementById("submitFeedbackBtn");
+    const prevBtnText = submitBtn.innerHTML;
+
+    try {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Submitting...";
+
+        const response = await axios.post(reviewUrl, review);
+        
+        alert("Feedback submitted successfully!");
+        document.getElementById("feedbackForm").reset();
+        document.getElementById("feedbackDish").value = "";
+        document.getElementById("foodImage").src = "images/vadapav.jpeg";
+        
+        // Reload reviews to show the new feedback
+        await loadReviews();
+
+    } catch (error) {
+        console.error("Error submitting feedback:", error);
+        alert("Error submitting feedback. Please try again.");
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = prevBtnText;
+    }
+}
+
+// Wire up feedback form submit button
+const submitFeedbackBtn = document.getElementById("submitFeedbackBtn");
+if (submitFeedbackBtn) {
+    submitFeedbackBtn.addEventListener("click", submitFeedback);
+}
+
  
  
 
