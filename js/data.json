@@ -1,7 +1,7 @@
 {
   "recipieData": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Puran Poli",
       "ingredients": [
         "2 cups chana dal",
@@ -24,7 +24,7 @@
       "image": "images/Puranpoli.jpeg"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Upma",
       "ingredients": [
         "1 cup semolina (rava/sooji)",
@@ -51,7 +51,7 @@
       "image": "images/upma.jpeg"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Vada Pav",
       "ingredients": [
         "4 pav buns",
@@ -77,7 +77,7 @@
       "image": "images/vadapav.jpeg"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Misal Pav",
       "ingredients": [
         "2 cups sprouted matki (moth beans)",
@@ -108,25 +108,26 @@
       "buttonText": "Explore Menu",
       "image": "images/MisalPav1.jpeg"
     }
+    
   ],
   "CustomerReview": [
     {
-      "id": 1,
-      "customerName": "Wade Warren",
+      "id": "1",
+      "customerName": "Maduri Dixit",
       "dishName": "Puran Poli",
       "description": "Very tasty and authentic Maharashtrian flavor.",
       "image": "images1/user1.jpg"
     },
     {
-      "id": 2,
-      "customerName": "Jenny Wilson",
+      "id": "2",
+      "customerName": "Shradha Kapoor",
       "dishName": "Vada Pav",
       "description": "Crispy vada and soft pav. Loved it!",
       "image": "images1/user2.jpg"
     },
     {
-      "id": 3,
-      "customerName": "Esther Howard",
+      "id": "3",
+      "customerName": "Raghav Juyal",
       "dishName": "Misal Pav",
       "description": "Perfect blend of spices and textures. A must-try!",
       "image": "images1/user3.jpg"

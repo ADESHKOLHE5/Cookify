@@ -3,96 +3,124 @@ const url = "http://localhost:3000/recipieData";
 async function loadSections() {
     try {
         const response = await axios.get(url);
-        const sections = response.data;  
+        const sections = response.data || [];
 
-        let SectionHtml = "";
+        // cache for filtering
+        window.allSections = sections;
 
-        sections.forEach((item, index) => {
-
-            // Build Ingredients HTML
-            let ingredientsHtml = "";
-            if (item.ingredients) {
-                ingredientsHtml = `
-                    <h4 class="mt-3">Ingredients:</h4>
-                    <ul>
-                        ${item.ingredients.map(i => i).join(", ")}
-                    </ul>
-                `;
-            }
-
-            // Build Process HTML
-            let processHtml = "";
-            if (item.process) {
-                processHtml = `
-                    <h4 class="mt-3">Process:</h4>
-                    <ol>
-                        ${item.process.map(step => `<li>${step}</li>`).join("")}
-                    </ol>
-                `;
-            }
-
-            // Odd-even layout
-            if (index % 2 !== 0) {
-                // IMAGE RIGHT
-                SectionHtml += `
-                <section class="container py-5">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-6 mb-4 mb-lg-0">
-                            <h1 class="fw-bold">${item.title}</h1>
-
-                            ${item.description1 ? `<p class="mt-3">${item.description1}</p>` : ""}
-                            <p>${item.description2 || ""}</p>
-
-                            ${ingredientsHtml}
-                            ${processHtml}
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="image-box">
-                                <img src="${item.image}" class="img-fluid filled-image" alt="Food">
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-                `;
-            } else {
-                // IMAGE LEFT
-                SectionHtml += `
-                <section class="container py-5">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-6">
-                            <div class="image-box">
-                                <img src="${item.image}" class="img-fluid filled-image" alt="Food">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 mb-4 mb-lg-0">
-                            <h1 class="fw-bold">${item.title}</h1>
-
-                            ${item.description1 ? `<p class="mt-3">${item.description1}</p>` : ""}
-                            <p>${item.description2 || ""}</p>
-
-                            ${ingredientsHtml}
-                            ${processHtml}
-                        </div>
-
-                    </div>
-                </section>
-                `;
-            }
-        });
-
-        document.getElementById("dynamic-section").innerHTML = SectionHtml;
+        renderSections(sections);
 
     } catch (error) {
         console.error("Error loading JSON:", error);
     }
 }
 
+function renderSections(sections) {
+    let SectionHtml = "";
+
+    sections.forEach((item, index) => {
+        let ingredientsHtml = "";
+        if (item.ingredients) {
+            ingredientsHtml = `
+                    <h4 class="mt-3">Ingredients:</h4>
+                    <ul>
+                        ${item.ingredients.map(i => i).join(", ")}
+                    </ul>
+                `;
+        }
+
+        let processHtml = "";
+        if (item.process) {
+            processHtml = `
+                    <h4 class="mt-3">Process:</h4>
+                    <ol>
+                        ${item.process.map(step => `<li>${step}</li>`).join("")}
+                    </ol>
+                `;
+        }
+
+        if (index % 2 !== 0) {
+            SectionHtml += `
+                <section class="container py-5">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                            <h1 class="fw-bold">${item.title}</h1>
+
+                            ${item.description1 ? `<p class="mt-3">${item.description1}</p>` : ""}
+                            <p>${item.description2 || ""}</p>
+
+                            ${ingredientsHtml}
+                            ${processHtml}
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="image-box">
+                                <img src="${item.image}" class="img-fluid filled-image" alt="Food">
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                `;
+        } else {
+            SectionHtml += `
+                <section class="container py-5">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6">
+                            <div class="image-box">
+                                <img src="${item.image}" class="img-fluid filled-image" alt="Food">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                            <h1 class="fw-bold">${item.title}</h1>
+
+                            ${item.description1 ? `<p class="mt-3">${item.description1}</p>` : ""}
+                            <p>${item.description2 || ""}</p>
+
+                            ${ingredientsHtml}
+                            ${processHtml}
+                        </div>
+
+                    </div>
+                </section>
+                `;
+        }
+    });
+
+    const container = document.getElementById("dynamic-section");
+    if (!SectionHtml) {
+        container.innerHTML = `<p class="text-center py-5">No recipes found.</p>`;
+    } else {
+        container.innerHTML = SectionHtml;
+    }
+}
+
 loadSections();
+
+// wire up search input (filter by title)
+const searchInput = document.querySelector('.filteredData');
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        const q = (e.target.value || '').trim().toLowerCase();
+        const all = window.allSections || [];
+        const filtered = q ? all.filter(item => (item.title || '').toLowerCase().includes(q)) : all;
+        renderSections(filtered);
+        // hide/show hero section while user types and update accessibility
+        const hero = document.querySelector('.hero-section');
+        if (hero) {
+            if (q.length > 0) {
+                hero.classList.add('hero-disabled');
+                hero.setAttribute('aria-hidden', 'true');
+            } else {
+                hero.classList.remove('hero-disabled');
+                hero.removeAttribute('aria-hidden');
+            }
+        }
+    });
+}
 
 
 // to load the data in json through a form

@@ -150,6 +150,11 @@ body {
   color: #bbb;
 }
 
+/* visually disable hero while searching */
+.hero-disabled {
+  display: none !important;
+}
+
 
 
 
