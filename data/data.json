@@ -107,8 +107,41 @@
       "description2": "A spicy Maharashtrian curry made with sprouted beans, topped with farsan and served with pav.",
       "buttonText": "Explore Menu",
       "image": "images/MisalPav1.jpeg"
+    },
+    {
+      "id": "989b",
+      "title": "dsafhhjk",
+      "description2": "this is most eat dish",
+      "ingredients": [
+        "fsahdf",
+        "afgg",
+        "dfgf",
+        "dfg"
+      ],
+      "process": [
+        "fgdsgd",
+        "dfgg",
+        "fgggs",
+        "sfggd"
+      ],
+      "buttonText": "Explore Menu",
+      "image": "images/imgSec.jpeg"
+    },
+    {
+      "id": "194b",
+      "title": "sambhar",
+      "description2": "good dish",
+      "ingredients": [
+        "2 cup water",
+        "rice 100 gm"
+      ],
+      "process": [
+        "boiled it",
+        "drained water"
+      ],
+      "buttonText": "Explore Menu",
+      "image": "images/MisalPav1.jpeg"
     }
-    
   ],
   "CustomerReview": [
     {
@@ -131,6 +164,24 @@
       "dishName": "Misal Pav",
       "description": "Perfect blend of spices and textures. A must-try!",
       "image": "images1/user3.jpg"
+    },
+    {
+      "id": "57d4",
+      "customerName": "ganesh kale",
+      "phone": "9665680995",
+      "date": "2026-01-05",
+      "description": "it is not to much spicy",
+      "dishName": "Upma",
+      "image": "images/upma.jpeg"
+    },
+    {
+      "id": "addd",
+      "customerName": "vijay salgavkar",
+      "phone": "7823814040",
+      "date": "2026-01-23",
+      "description": "easy to make",
+      "dishName": "Puran Poli",
+      "image": "images/Puranpoli.jpeg"
     }
   ]
 }

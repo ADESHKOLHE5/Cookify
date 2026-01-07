@@ -116,7 +116,7 @@ document.querySelector(".filteredData")?.addEventListener("input", (e) => {
     : allSections;
 
   renderSections(filteredData);
-
+//toggle hero section when you search recipie
   document
     .querySelector(".hero-section")
     ?.classList.toggle("hero-disabled", searchText.length > 0);
